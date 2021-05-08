@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Basduvar.Core\Basduvar.Core.csproj" />
+    <ProjectReference Include="..\Basduvar.Data\Basduvar.Data.csproj" />
+    <ProjectReference Include="..\Basduvar.Service\Basduvar.Service.csproj" />
+  </ItemGroup>
+
+
+</Project>
