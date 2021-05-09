@@ -4,9 +4,9 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Basduvar.Core.Repositories
+namespace Basduvar.Core.Services
 {
-    public interface IRepository<TEntity> where TEntity : class
+    public interface IService<TEntity> where TEntity:class
     {
         Task AddAsync(TEntity entity);
         Task AddRangeAsync(IEnumerable<TEntity> entities);

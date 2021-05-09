@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Basduvar.Core.Models
 {
-    internal class Category
+    public class Category
     {
         public Category()
         {
