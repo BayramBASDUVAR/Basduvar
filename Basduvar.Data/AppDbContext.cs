@@ -1,4 +1,6 @@
 ﻿using Basduvar.Core.Models;
+using Basduvar.Data.Configurations;
+using Basduvar.Data.Seeds;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,9 +16,14 @@ namespace Basduvar.Data
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new ProductConfiguration());
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
 
+            modelBuilder.ApplyConfiguration(new ProductSeed(new int[] {1,2 }));
+            modelBuilder.ApplyConfiguration(new CategorySeed(new int[] {1,2 }));
         }
     }
 }
