@@ -6,3 +6,7 @@ Asp.Net Core API/WEB
 =>Repository Pattern
 
 =>Unit of Work Design Pattern
+
+=>Code-First approach 
+
+=>Entity Framework Core
