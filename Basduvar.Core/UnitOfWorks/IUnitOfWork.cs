@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Basduvar.Core.UnitOfWorks
 {
-    interface IUnitOfWork
+   public interface IUnitOfWork
     {
         IProductRepository Products { get; }
         ICategoryRepository Categories { get; }
