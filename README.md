@@ -10,3 +10,5 @@ Asp.Net Core API/WEB
 =>Code-First approach 
 
 =>Entity Framework Core
+
+=>Migration (Data Layer)
