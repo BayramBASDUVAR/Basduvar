@@ -1,14 +1,16 @@
 # Basduvar
 Asp.Net Core API/WEB
 
-=>Asp.Net Core  N-Tier Architecture
+=>Asp.Net Core  N-Tier Architecture(3.1)
 
-=>Repository Pattern
+=>Entity Framework Core
+
+=>Generic Repository Pattern
 
 =>Unit of Work Design Pattern
 
 =>Code-First approach 
 
-=>Entity Framework Core
-
 =>Migration (Data Layer)
+
+=>Microsoft Visual Studio Professional 2019 
