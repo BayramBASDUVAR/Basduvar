@@ -33,7 +33,7 @@ namespace Basduvar.API
             {
                 options.UseSqlServer(Configuration["ConnectionStrings:SqlConStr"].ToString(),o=>
                 {
-                    o.MigrationsAssembly("Basduvar.Data");
+                    o.MigrationsAssembly("Basduvar.Data");//Hangi projede
                 });
             });
 

@@ -13,7 +13,7 @@ namespace Basduvar.Data.Repositories
     {
         protected readonly DbContext _context;
         private readonly DbSet<TEntity> _dbSet;
-        public Repository(DbContext contex)
+        public Repository(AppDbContext contex)
         {
             _context = contex;
             _dbSet = contex.Set<TEntity>();
