@@ -15,8 +15,9 @@ namespace Basduvar.Service.Services
         private readonly IRepository<TEntity> _repository;
         public Service(IUnitOfWork unitOfWork, IRepository<TEntity> repository)
         {
-            unitOfWork = _unitOfWork;
-            repository = _repository;
+
+            _unitOfWork = unitOfWork;
+            _repository = repository;
         }
 
         public async Task<TEntity> AddAsync(TEntity entity)
