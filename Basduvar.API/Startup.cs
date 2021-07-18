@@ -1,19 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Basduvar.Core.Repositories;
+using Basduvar.Core.Services;
 using Basduvar.Core.UnitOfWorks;
 using Basduvar.Data;
+using Basduvar.Data.Repositories;
 using Basduvar.Data.UnitOfWorks;
+using Basduvar.Service.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace Basduvar.API
 {
@@ -29,6 +26,14 @@ namespace Basduvar.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped(typeof(IRepository<>),typeof(Repository<>));//Generic
+            services.AddScoped(typeof(IService<>),typeof(Service<>));////Generic
+            services.AddScoped<ICategoryService,CategoryService>();//Not Generic
+            services.AddScoped<IProductService, ProductService>();//Not Generic
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+
+
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseSqlServer(Configuration["ConnectionStrings:SqlConStr"].ToString(),o=>
@@ -36,8 +41,6 @@ namespace Basduvar.API
                     o.MigrationsAssembly("Basduvar.Data");//Hangi projede
                 });
             });
-
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddControllers();
         }
