@@ -16,8 +16,12 @@ namespace Basduvar.API.Mapping
             CreateMap<CategoryDto,Category>();
             CreateMap<Category, CategoryWithProductDto>();
             CreateMap<CategoryWithProductDto, Category>();
+
             CreateMap<Product, ProductDto>();
             CreateMap<ProductDto, Product>();
+
+            CreateMap<Product, ProductWithCategoryDto>();
+            CreateMap<ProductWithCategoryDto, Product>();
         }
     }
 }
