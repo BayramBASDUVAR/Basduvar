@@ -11,7 +11,7 @@ Asp.Net Core API/WEB
 
 =>Code-First approach 
 
-=>Migration (Data Layer)
+=>Migration (Data Layer): add-migration, Update-databse (Package Manage Console)
 
 =>Microsoft Visual Studio Professional 2019 
 
