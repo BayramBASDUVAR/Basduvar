@@ -12,8 +12,8 @@ namespace Basduvar.API.Mapping
     {
         public MapProfile()
         {
-            CreateMap<Category,CategoryDto>();
-            CreateMap<CategoryDto,Category>();
+            CreateMap<Category, CategoryDto>();
+            CreateMap<CategoryDto, Category>();
             CreateMap<Category, CategoryWithProductDto>();
             CreateMap<CategoryWithProductDto, Category>();
 
@@ -22,6 +22,9 @@ namespace Basduvar.API.Mapping
 
             CreateMap<Product, ProductWithCategoryDto>();
             CreateMap<ProductWithCategoryDto, Product>();
+
+            CreateMap<Person, PersonDto>();
+            CreateMap<PersonDto, Person>();
         }
     }
 }
