@@ -35,5 +35,11 @@ namespace Basduvar.API.Controllers
             var newPerson = await _personService.AddAsync(_mapper.Map<Person>(personDto));
             return Created(string.Empty,_mapper.Map<PersonDto>(newPerson));
         }
+        [HttpPut]
+        public IActionResult Update(PersonDto personDto)
+        {
+            var person = _personService.Update(_mapper.Map<Person>(personDto));
+            return NoContent();//Gereksiz veri trafiği olmasın.Best practice açısından bu şekilde olması gerekir
+        }
     }
 }

@@ -10,5 +10,6 @@ namespace Basduvar.API.DTOs
         public int Id { get; set; }
         public string Name { get; set; }
         public string SurName { get; set; }
+        public DateTime DogumTarihi { get; set; }
     }
 }
