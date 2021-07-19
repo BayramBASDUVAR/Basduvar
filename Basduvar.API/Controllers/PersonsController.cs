@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Basduvar.API.DTOs;
+using Basduvar.API.Filters;
 using Basduvar.Core.Models;
 using Basduvar.Core.Services;
 using Microsoft.AspNetCore.Http;
@@ -29,6 +30,7 @@ namespace Basduvar.API.Controllers
             return Ok(_mapper.Map<IEnumerable<PersonDto>>(persons));
         }
 
+        [ValidationFilter]
         [HttpPost]
         public async Task<IActionResult> Save(PersonDto personDto)
         {
