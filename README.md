@@ -16,3 +16,5 @@ Asp.Net Core API/WEB
 =>Microsoft Visual Studio Professional 2019 
 
 =>AutoMapper (AutoMapper,AutoMapper.Extensions.Microsoft.DependencyInjection):From Nuget 
+
+=>ValidationFilter 
