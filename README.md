@@ -17,4 +17,4 @@ Asp.Net Core API/WEB
 
 =>AutoMapper (AutoMapper,AutoMapper.Extensions.Microsoft.DependencyInjection):From Nuget 
 
-=>ValidationFilter 
+=>Filter (ValidationFilter,NotFoundFilter)
