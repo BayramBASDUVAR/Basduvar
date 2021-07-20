@@ -30,7 +30,6 @@ namespace Basduvar.API.Controllers
             return Ok(_mapper.Map<IEnumerable<PersonDto>>(persons));
         }
 
-        [ValidationFilter]
         [HttpPost]
         public async Task<IActionResult> Save(PersonDto personDto)
         {

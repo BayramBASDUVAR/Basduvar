@@ -1,3 +1,4 @@
+using Basduvar.API.Filters;
 using Basduvar.Core.Repositories;
 using Basduvar.Core.Services;
 using Basduvar.Core.UnitOfWorks;
@@ -29,6 +30,7 @@ namespace Basduvar.API
         {
             services.AddAutoMapper(typeof(Startup));//Tüm objeler için map leme yapacak
             services.AddScoped(typeof(IRepository<>),typeof(Repository<>));//Generic
+            services.AddScoped<NotFoundFilter>();
             services.AddScoped(typeof(IService<>),typeof(Service<>));////Generic
             services.AddScoped<ICategoryService,CategoryService>();//Not Generic
             services.AddScoped<IProductService, ProductService>();//Not Generic
@@ -44,7 +46,12 @@ namespace Basduvar.API
                 });
             });
 
-            services.AddControllers();
+
+            services.AddControllers(o=>
+            {
+                o.Filters.Add(new ValidationFilter());//Tüm Controller larda ValidationFilter tanýmlamak istersek Startup ta bu þekilde tanýmlyabiliriz
+            }
+            );
 
             //Burdaki amaç; validationfilter hata mesajlarýný kendim vermek istiyorum demek için yazýldý
             services.Configure<ApiBehaviorOptions>(options=>

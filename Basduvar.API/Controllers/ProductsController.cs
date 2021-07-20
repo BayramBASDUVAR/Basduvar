@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Basduvar.API.DTOs;
+using Basduvar.API.Filters;
 using Basduvar.Core.Models;
 using Basduvar.Core.Services;
 using Microsoft.AspNetCore.Http;
@@ -29,12 +30,16 @@ namespace Basduvar.API.Controllers
             var products = await _productService.GetAllAsync();
             return Ok(_mapper.Map<IEnumerable<ProductDto>>(products));
         }
+
+        [ServiceFilter(typeof(NotFoundFilter))]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
             var product = await _productService.GetByIdAsync(id);
             return Ok(_mapper.Map<ProductDto>(product));
         }
+
+        [ServiceFilter(typeof(NotFoundFilter))]
         [HttpGet("{id}/category")]
         public async Task<IActionResult> GetWithCategoryByIdAsync(int id)
         {
@@ -53,6 +58,8 @@ namespace Basduvar.API.Controllers
             var product = _productService.Update(_mapper.Map<Product>(productDto));
             return NoContent();
         }
+
+        [ServiceFilter(typeof(NotFoundFilter))]
         [HttpDelete("{id}")]
         public IActionResult Remove(int id)
         {
